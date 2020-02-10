@@ -2,21 +2,33 @@
 <html>
 <head>
 	<title>A Simple Tarot Reading Game</title>
+	<meta charset="utf-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico|Sriracha&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 	<div class="title-field">
 		<nav>
-			<div class="Logo"><img src="https://img.icons8.com/color/48/000000/wizard.png"> TAROT READING</div>
-			<li>HOME</li>
-			<li>DAILY READING</li>
-			<li>YEARLY PREDICTION</li>
+			<div class="Logo">
+				<img src="img/crystalBall.png"> 
+				<div class="logo-name">TAROT READING</div>
+				<div class="burger">
+					<div class="menu-line"></div>
+					<div class="menu-line"></div>
+					<div class="menu-line"></div>
+				</div>
+			</div>
+			
+			<li class="hidden-menu">HOME</li>
+			<li class="hidden-menu">DAILY READING</li>
+			<li class="hidden-menu">YEARLY PREDICTION</li>
+
 		</nav>
 		<div class="main">
-			<img src="https://img.icons8.com/dusk/64/000000/cards.png">
+			<img src="img/cards.png">
 			<div class="main-item main-title">Tarot Card Reading</div>
-			<div class="main-item main-intro">These cards do not determine your fate, only the decisons that you make do.</div>
+			<div class="main-item">These cards do not determine your fate, only the decisons that you make do.</div>
 			<a href="#reading-field"><button class="main-item main-btn">Get Started!</button></a>
 		</div>
 		

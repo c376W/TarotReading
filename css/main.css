@@ -29,15 +29,30 @@ li{
 	color:#fff;
 	margin:20px 50px;
 	font-family: 'Sriracha', cursive;
+	font-size: 20px;
 }
 
 .Logo{
-	margin: 20px 50px;
+	margin: 20px 10px;
 	font-family: 'Pacifico', cursive;
 	font-weight: bold;
 	font-size: 20px;
 	display: flex;
 	align-items: center;
+}
+
+.burger{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.menu-line{
+	width:30px;
+	height:10px;
+	border-bottom:3px solid #eee;
+	border-radius: 20%;
+	visibility: hidden; 
+	margin-left: 5px;
 }
 
 .title-field{
@@ -59,9 +74,6 @@ li{
 .main-title,.daily-title{
 	font-size: 30px;
 	font-family: 'Sriracha', cursive;
-}
-.main-intro{
-	width:70%;
 }
 .main-item{
 	margin:20px 0px;
@@ -98,5 +110,27 @@ li{
 }
 .daily-title{
 	color:#fff;
+}
+
+@media (max-width:955px){
+	.hidden-menu{
+		visibility:hidden;
+	}
+	.menu-line{
+		visibility: visible;
+	}
+	.logo-name{
+		display: none;
+	}
+}
+
+@media (max-width: 625px){
+	nav{
+		justify-content: flex-start;
+	}
+	.hidden-menu{
+		display: none;
+	}
+
 }
 
