@@ -22,6 +22,9 @@ nav{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: #000;
+	border-bottom: 2px solid #22777d;
+	height:100px; 
 }
 
 li{
@@ -45,15 +48,51 @@ li{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	border:3px solid #eee;
+	padding:8px 1px;
+	background-color: #eee;
+	border-radius: 30px;
+	transition: .3s;
 }
+.burger:hover{
+	background-color: #22777d;
+	border:3px solid #22777d;
+	cursor: pointer;
+}
+
+
 .menu-line{
 	width:30px;
-	height:10px;
-	border-bottom:3px solid #eee;
-	border-radius: 20%;
+	height:4px;
+	background-color: #000;
 	visibility: hidden; 
-	margin-left: 5px;
+	margin:2px 5px;
 }
+
+.slide-out-menu{
+	width:200px;
+	height:100%;
+	background-color: rgba(34, 119, 125,0.7);
+	position: fixed;
+	top:100px;
+	left:0;
+	transform: translate3d(-200px,0,0);
+	transition:.3s;
+}
+.slide-menu-show{
+	transform: translate3d(0,0,0);
+}
+#go-back:hover{
+	cursor: pointer;
+	color:#000;
+}
+
+
+
+
+/*
+	Title Field
+*/
 
 .title-field{
 	background-image: url(../img/main-bg.jpg);
@@ -132,5 +171,11 @@ li{
 		display: none;
 	}
 
+}
+
+@media(min-width:954px){
+	.burger{
+		display: none;
+	}
 }
 
