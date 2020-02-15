@@ -56,7 +56,7 @@ a{
 	position: absolute;	
 	transition: inherit;
 	z-index: -1;
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 }
 
 .hidden-menu:hover {
@@ -231,6 +231,7 @@ a{
 	margin:5px;
 	border:1px solid #000;
 	cursor: pointer;
+	border-radius: 20px;
 }
 
 @media (max-width:955px){
