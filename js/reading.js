@@ -3,6 +3,7 @@ let burger=document.querySelector(".burger");
 let back=document.getElementById("go-back");
 let cards=document.querySelectorAll(".card-face");
 let dailyResetBtn=document.querySelector(".daily-reset-btn");
+let card_captions=document.querySelectorAll(".card-caption");
 
 let image_lib=[
 	"url('./img/cards/Chariot.jpg')",
@@ -85,8 +86,92 @@ let image_lib=[
 	"url('./img/cards/Pents14.jpg')",
 
 ];
+
+let card_names=[
+	"Chariot",
+	"Death",
+	"Devil",
+	"Emperor",
+	"Empress",
+	"Fool",
+	"Hanged Man",
+	"Hermit",
+	"Hierophant",
+	"High Priestess",
+	"Judgement",
+	"Justice",
+	"Lovers",
+	"Magician",
+	"Moon",
+	"Star",
+	"Strength",
+	"Sun",
+	"Temperance",
+	"Tower",
+	"Wheel of Fortune",
+	"World",
+	"Ace of Wands",
+	"Two of Wands",
+	"Three of Wands",
+	"Four of Wands",
+	"Five of Wands",
+	"Six of Wands",
+	"Seven of Wands",
+	"Eight of Wands",
+	"Nine of Wands",
+	"Ten of Wands",
+	"Page of Wands",
+	"Knight of Wands",
+	"Queen of Wands",
+	"King of Wands",
+	"Ace of Cups",
+	"Two of Cups",
+	"Three of Cups",
+	"Four of Cups",
+	"Five of Cups",
+	"Six of Cups",
+	"Seven of Cups",
+	"Eight of Cups",
+	"Nine of Cups",
+	"Ten of Cups",
+	"Page of Cups",
+	"Knight of Cups",
+	"Queen of Cups",
+	"King of Cups",
+	"Ace of Swords",
+	"Two of Swords",
+	"Three of Swords",
+	"Four of Swords",
+	"Five of Swords",
+	"Six of Swords",
+	"Seven of Swords",
+	"Eight of Swords",
+	"Nine of Swords",
+	"Ten of Swords",
+	"Page of Swords",
+	"Knight of Swords",
+	"Queen of Swords",
+	"King of Swords",
+	"Ace of Pentacles",
+	"Two of Pentacles",
+	"Three of Pentacles",
+	"Four of Pentacles",
+	"Five of Pentacles",
+	"Six of Pentacles",
+	"Seven of Pentacles",
+	"Eight of Pentacles",
+	"Nine of Pentacles",
+	"Ten of Pentacles",
+	"Page of Pentacles",
+	"Knight of Pentacles",
+	"Queen of Pentacles",
+	"King of Pentacles",
+
+];
 let org=Array.from(image_lib);
+let card_name_sub=Array.from(card_names);
 let tracking=[0,0,0,0,0,0];
+let daily_chosen=[];
 
 setAllCardsBackFaces();
 slideShowController(burger);
@@ -94,7 +179,6 @@ slideShowController(back);
 
 clickCard(cards,tracking);
 resetBtn(tracking);
-console.log("afterall,tracking",tracking);
 
 // Functions
 
@@ -102,6 +186,7 @@ function resetBtn(){
 	dailyResetBtn.addEventListener("click",function(){
 		setAllCardsBackFaces();
 		tracking=[0,0,0,0,0,0];
+		daily_chosen=[];
 		clickCard(cards,tracking);
 	})
 
@@ -110,7 +195,7 @@ function resetBtn(){
 function setAllCardsBackFaces(){
 	for(let i=0;i<6;i++){
 		cards[i].style.backgroundImage="url('./img/cards/back-face.png')";
-		console.log("reset tracking",tracking);
+		card_captions[i].style.color="#153545";
 	}
 }
 
@@ -131,14 +216,14 @@ function clickCard(list,tracking){
 			if(tracking[i]!==1){
 				index=Math.floor(org.length*Math.random());
 				this.style.backgroundImage=org[index];
-				org=org.splice(0,index).concat(org.splice(1,org.length-1))
+				daily_chosen.push(card_name_sub[index]);
+				card_captions[i].innerHTML=daily_chosen[daily_chosen.length-1];
+				card_captions[i].style.color="#fff";
+				org=org.splice(0,index).concat(org.splice(1,org.length-1));
+				card_name_sub=card_name_sub.splice(0,index).concat(card_name_sub.splice(1,card_name_sub.length-1));
 				tracking[i]=1;
-				console.log(tracking);
 
 			}
-			
-			
-			
 		})
 	}
 }

@@ -221,6 +221,9 @@ a{
 	color:#fff;
 	text-align: center;
 }
+.cards-area{
+	margin-bottom: 20px;
+}
 .row{
 	display: flex;
 	margin:10px;
@@ -235,9 +238,21 @@ a{
 	cursor: pointer;
 	border-radius: 20px;
 }
+.card-set{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color:#153545;
+}
 .daily-reset-btn{
-
-	font-size: 30px;
+	border:none;
+	font-size: 20px;
+}
+.daily-reset-btn:hover{
+	background-color: transparent;
+	border:none;
+	outline: none;
+	color:#57fad4;
 }
 
 @media (max-width:955px){
