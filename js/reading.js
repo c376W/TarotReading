@@ -2,8 +2,8 @@ let slideMenu=document.querySelector(".slide-out-menu");
 let burger=document.querySelector(".burger");
 let back=document.getElementById("go-back");
 let cards=document.querySelectorAll(".card-face");
-console.log(cards[3].style);
-console.log(cards[3].style.backgroundImage); 
+let dailyResetBtn=document.querySelector(".daily-reset-btn");
+
 let image_lib=[
 	"url('./img/cards/Chariot.jpg')",
 	"url('./img/cards/Death.jpg')",
@@ -87,12 +87,32 @@ let image_lib=[
 ];
 let org=Array.from(image_lib);
 let tracking=[0,0,0,0,0,0];
+
+setAllCardsBackFaces();
 slideShowController(burger);
 slideShowController(back);
-clickCard(cards,tracking);
 
+clickCard(cards,tracking);
+resetBtn(tracking);
+console.log("afterall,tracking",tracking);
 
 // Functions
+
+function resetBtn(){
+	dailyResetBtn.addEventListener("click",function(){
+		setAllCardsBackFaces();
+		tracking=[0,0,0,0,0,0];
+		clickCard(cards,tracking);
+	})
+
+}
+
+function setAllCardsBackFaces(){
+	for(let i=0;i<6;i++){
+		cards[i].style.backgroundImage="url('./img/cards/back-face.png')";
+		console.log("reset tracking",tracking);
+	}
+}
 
 function slideShowController(el){
 	el.addEventListener("click",function(){
