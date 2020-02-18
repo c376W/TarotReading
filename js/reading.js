@@ -4,6 +4,8 @@ let back=document.getElementById("go-back");
 let cards=document.querySelectorAll(".card-face");
 let dailyResetBtn=document.querySelector(".daily-reset-btn");
 let card_captions=document.querySelectorAll(".card-caption");
+let detailReadingBtn=document.getElementById("main-btn");
+
 
 let image_lib=[
 	"url('./img/cards/Chariot.jpg')",
@@ -173,7 +175,7 @@ let card_name_sub=Array.from(card_names);
 let tracking=[0,0,0,0,0,0];
 let daily_chosen=[];
 
-setAllCardsBackFaces();
+// setAllCardsBackFaces();
 slideShowController(burger);
 slideShowController(back);
 
@@ -182,8 +184,11 @@ resetBtn(tracking);
 
 // Functions
 
+
+
 function resetBtn(){
 	dailyResetBtn.addEventListener("click",function(){
+		detailReadingBtn.disabled=true;
 		setAllCardsBackFaces();
 		tracking=[0,0,0,0,0,0];
 		daily_chosen=[];
@@ -213,6 +218,7 @@ function clickCard(list,tracking){
 	let index=0;
 	for(let i=0;i<list.length;i++){
 		list[i].addEventListener("click",function(){
+			detailReadingBtn.disabled=false;
 			if(tracking[i]!==1){
 				index=Math.floor(org.length*Math.random());
 				this.style.backgroundImage=org[index];
