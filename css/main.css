@@ -210,6 +210,8 @@ a{
 	Main Reading Section
 */
 
+	
+
 .daily-reading,.yearly-reading{
 	height:800px;
 	background-color: #153545;
@@ -217,6 +219,9 @@ a{
 	flex-direction: column;
 	align-items: center;
 }
+
+	/* Daily Reading Section */
+
 .daily-title{
 	color:#fff;
 	text-align: center;
@@ -254,6 +259,16 @@ a{
 	outline: none;
 	color:#57fad4;
 }
+
+	/* Yearly Reading Section*/
+
+.yearly-reading{
+	padding:100px;
+}
+
+/*
+	Media Adjustment
+*/
 
 @media (max-width:955px){
 	.hidden-menu{
