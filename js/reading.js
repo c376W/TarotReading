@@ -5,6 +5,7 @@ let cards=document.querySelectorAll(".card-face");
 let dailyResetBtn=document.querySelector(".daily-reset-btn");
 let card_captions=document.querySelectorAll(".card-caption");
 let detailReadingBtn=document.getElementById("main-btn");
+let flipCard=document.querySelector(".flip-card-inner");
 
 
 let image_lib=[
@@ -181,9 +182,17 @@ slideShowController(back);
 
 clickCard(cards,tracking);
 resetBtn(tracking);
+flip();
+
 
 // Functions
 
+function flip(){
+	flipCard.addEventListener("click",function(){
+		flipCard.classList.add("show");
+		console.log(flipCard.classList);
+	})
+}
 
 
 function resetBtn(){
