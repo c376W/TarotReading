@@ -5,7 +5,9 @@ let cards=document.querySelectorAll(".card-face");
 let dailyResetBtn=document.querySelector(".daily-reset-btn");
 let card_captions=document.querySelectorAll(".card-caption");
 let detailReadingBtn=document.getElementById("main-btn");
-let flipCard=document.querySelector(".flip-card-inner");
+let card_front_faces=document.querySelectorAll(".card-face-front");
+let card_back_faces=document.querySelectorAll(".card-face-back");
+let cards_inner=document.querySelectorAll(".card-face-inner");
 
 
 let image_lib=[
@@ -182,7 +184,7 @@ slideShowController(back);
 
 clickCard(cards,tracking);
 resetBtn(tracking);
-flip();
+// flip();
 
 
 // Functions
@@ -198,6 +200,7 @@ function flip(){
 function resetBtn(){
 	dailyResetBtn.addEventListener("click",function(){
 		detailReadingBtn.disabled=true;
+		
 		setAllCardsBackFaces();
 		tracking=[0,0,0,0,0,0];
 		daily_chosen=[];
@@ -208,8 +211,9 @@ function resetBtn(){
 
 function setAllCardsBackFaces(){
 	for(let i=0;i<6;i++){
-		cards[i].style.backgroundImage="url('./img/cards/back-face.png')";
-		card_captions[i].style.color="#153545";
+		cards_inner[i].classList.remove("show");
+		card_front_faces[i].style.backgroundImage="url('./img/cards/back-face.jpg')";
+		card_captions[i].style.color="#6e0075";
 	}
 }
 
@@ -230,7 +234,8 @@ function clickCard(list,tracking){
 			detailReadingBtn.disabled=false;
 			if(tracking[i]!==1){
 				index=Math.floor(org.length*Math.random());
-				this.style.backgroundImage=org[index];
+				card_back_faces[i].style.backgroundImage=org[index];
+				cards_inner[i].classList.add("show");
 				daily_chosen.push(card_name_sub[index]);
 				card_captions[i].innerHTML=daily_chosen[daily_chosen.length-1];
 				card_captions[i].style.color="#fff";
