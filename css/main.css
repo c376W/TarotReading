@@ -36,6 +36,7 @@ li{
 	color:#fff;
 	margin:20px 30px;
 	font-family: 'Sriracha', cursive;
+	/*font-family: 'Lato';*/
 	font-size: 20px;
 	transition: .3s;
 }
@@ -52,6 +53,7 @@ a{
 .Logo{
 	margin: 20px 10px;
 	font-family: 'Pacifico', cursive;
+	/*font-family: 'Lato';*/
 	font-weight: bold;
 	font-size: 20px;
 	display: flex;
@@ -131,6 +133,7 @@ a{
 .main-title,.daily-title{
 	font-size: 30px;
 	font-family: 'Sriracha', cursive;
+	/*font-family: 'Lato' ;*/
 }
 .main-item{
 	margin:20px 0px;
@@ -142,6 +145,7 @@ a{
 	color:#fff;
 	background-color: transparent;
 	font-family: 'Sriracha', cursive;
+	/*font-family: 'Lato';*/
 	outline: none;
 	font-size: 20px;
 	cursor: pointer;
