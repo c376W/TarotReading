@@ -8,6 +8,7 @@ let detailReadingBtn=document.getElementById("main-btn");
 let card_front_faces=document.querySelectorAll(".card-face-front");
 let card_back_faces=document.querySelectorAll(".card-face-back");
 let cards_inner=document.querySelectorAll(".card-face-inner");
+let cards_meaning=document.querySelectorAll(".card-face-meaning");
 
 
 let image_lib=[
@@ -184,10 +185,23 @@ slideShowController(back);
 
 clickCard(cards,tracking);
 resetBtn(tracking);
+clickCaption();
 // flip();
 
 
 // Functions
+
+function clickCaption(){
+	for(let i=0;i<card_captions.length;i++){
+		card_captions[i].addEventListener("click",function(){
+			
+			cards_meaning[i].style.opacity="0.9";
+			console.log(cards_meaning[i].style);
+		})
+
+	}
+	
+}
 
 function flip(){
 	flipCard.addEventListener("click",function(){
