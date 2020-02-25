@@ -234,6 +234,10 @@ a{
   transform: rotateY(180deg);
 }
 
+.card-caption{
+	cursor: pointer;
+}
+
 
 .card-set{
 	display: flex;
