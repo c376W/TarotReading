@@ -204,6 +204,7 @@ a{
 	transition:.5s;
 }
 .card-face-meaning{
+	box-sizing: border-box;
 	position:absolute;
 	top:0;
 	width:100%;
@@ -213,6 +214,9 @@ a{
 	opacity: 0;
 	border-radius: 20px;
 	z-index: 11;
+	text-align: center;
+	padding:20px 5px;
+
 }
 .card-face-front,.card-face-back{
 	position: absolute;
@@ -257,6 +261,20 @@ a{
 	border:none;
 	outline: none;
 	color:#fcb8f8;
+}
+
+.card-interp-downSlide-panel{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width:50%;
+	height:50%;
+	background-color: #ebc034;
+	position: fixed;
+	top:200px;
+	border-radius: 10px;
+	box-shadow: 0px 3px 4px 4px #ddd;
+	display:none;
 }
 
 	/* Yearly Reading Section*/
